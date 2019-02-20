@@ -28,7 +28,7 @@ class DogDatabase:
         if len(dog) > len(DOG_ATTRIBUTES):
             raise DogDatabaseError('Too many attributes passed for a dog.')
 
-        template = 'INSERT INTO dogs ({}) VALUES (?, ?, ?)'.format(', '.join(DOG_ATTRIBUTES))
+        template = 'INSERT INTO dogs ({atrs}) VALUES (?, ?, ?)'.format(atrs=', '.join(DOG_ATTRIBUTES))
         params = [dog[attribute] for attribute in DOG_ATTRIBUTES]
 
         try:
