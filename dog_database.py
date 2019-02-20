@@ -25,11 +25,11 @@ class DogDatabase:
             if attribute not in dog:
                 raise DogDatabaseError('Entering a dog requires a(n) {atr}.'.format(atr=attribute))
 
-        if len(dog) > 3:
+        if len(dog) > len(DOG_ATTRIBUTES):
             raise DogDatabaseError('Too many attributes passed for a dog.')
 
-        template = 'INSERT INTO dogs VALUES (?, ?, ?)'
-        params = (dog['name'], dog['breed'], dog['age'])
+        template = 'INSERT INTO dogs ({}) VALUES (?, ?, ?)'.format(', '.join(DOG_ATTRIBUTES))
+        params = [dog[attribute] for attribute in DOG_ATTRIBUTES]
 
         try:
             self._cursor.execute(template, params)
