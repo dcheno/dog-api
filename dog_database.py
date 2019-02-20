@@ -20,7 +20,7 @@ class DogDatabase:
 
     def insert(self, dog):
         """Creates a record for the given dog in the database with the
-        given attributes"""
+        given attributes. Expects dog as a dictionary."""
         for attribute in DOG_ATTRIBUTES:
             if attribute not in dog:
                 raise DogDatabaseError('Entering a dog requires a(n) {atr}.'.format(atr=attribute))

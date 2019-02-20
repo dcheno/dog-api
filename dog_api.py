@@ -9,19 +9,6 @@ from dog_database import DogDatabase, DogDatabaseError, DogNotFoundError
 """A REST API that allows users to retrieve, add, update, and delete representations of dogs."""
 
 PORT = 8888
-DOG_ATTRIBUTES = ['name', 'breed', 'age']
-
-# TODO: - Write API tests X
-#       - Set up handler methods X
-#       - Write DB tests X
-#       - Set up database to store everything X
-#       - Write additional tests to cover any other implementation X
-#       - Play test on local server X
-#       - Make sure everything is commenty clean.
-#       - Dockerize X
-#       - Add some documentation to this module.
-#       - Consider loading on to AWS
-#       - Test everything again!
 
 
 class DogAPIError(tornado.web.HTTPError):
