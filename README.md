@@ -6,6 +6,11 @@ Tornado
 ```bash
 pip install tornado
 ```
+### Starting the Application:
+```bash
+python3 dog_api.py &
+```
+By default, the dog API will run on port 8888.
 
 ### Finding a Dog:
 Append the name of the dog to the end of the URL and send an HTTP GET request.
